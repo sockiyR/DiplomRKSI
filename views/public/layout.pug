@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    //- link(rel='stylesheet', href='./assets/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    block head
+  body
+    block content
+    block footer
+      //- script(src="./assets/vendor.js")
+      script(src="./assets/app.js")
+      
+      //- include footer-block.pug
