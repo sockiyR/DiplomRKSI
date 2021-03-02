@@ -1,6 +1,26 @@
-.header{
+.header {
+    height: 70px;
+    display: flex;
+    align-items: center;
     
-    &__content{
+
+    &__content {
         display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        max-width: 110px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__list-item {
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 17px;
+        color: #373737;
     }
 }

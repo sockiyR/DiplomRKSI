@@ -1,0 +1,37 @@
+.hero {
+    position: relative;
+    top: 25%;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__list-item {
+        background: #FFFFFF;
+        box-shadow: 0px 8px 15px rgba(46, 21, 21, 0.16);
+        border-radius: 8px;
+    }
+
+    &__list-item-content {
+        margin: 60px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    &__list-item-img {
+        max-width: 72px;
+    }
+
+    &__list-item-title {
+        max-width: 212px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+        color: #333333;
+    }
+}

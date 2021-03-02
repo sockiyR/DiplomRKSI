@@ -1,19 +1,35 @@
 @import "./utils/wrap.scss";
+@import "./utils/m.scss";
+@import "./utils/p.scss";
 
 // ************************************************
 @import "./fonts.scss";
 // ************************************************
 @import "./block/header.scss";
+@import "./block/order.scss";
+@import "./block/long-line.scss";
+@import "./block/button.scss";
+@import "./block/hero.scss";
+@import "./block/about.scss";
+@import "./block/categories.scss";
 // ************************************************
 * {
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
 }
+// body{
+//     max-width: 1440px;
+//     margin: 0 auto;
+// }
 img{
     width: 100%;
     height: 100%;
 }
 ul{
     list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #373737;
 }

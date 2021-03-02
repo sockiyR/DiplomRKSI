@@ -6,9 +6,73 @@ block head
 block content
   section.header 
     .wrap.header__content 
-      img(src="./images/logo.png", alt="", srcset="")
+      img(src="./images/logo.svg", alt="", srcset="").header__logo
       ul.header__list 
-        li Категории
-        li О компании
-        li контакты
-        li Мы на карте
+        li.header__list-item.mr-4 Категории
+        li.header__list-item.mr-4
+           a(href="#") О компании
+        li.header__list-item.mr-4
+           a(href="#") контакты
+        li.header__list-item
+          a(href="#")  Мы на карте
+  section.order 
+    .wrap.pt-20
+      span.long-line.long-line_order.mr-2  ——
+      span.order__header-text САНТЕХНИКА ЭТО ТО ЧТО МЫ ДЕЛАЕМ
+      .order__content.mt-2
+        p.order__content-prev КОМАНДА, КОТОРОЙ ВЫ МОЖЕТЕ ДОВЕРЯТЬ
+        p.order__content-description.mt-2 Вся наша команда сантехников сертифицирована и имеет многолетний опыт работы как в жилых, так и в коммерческих сантехнических работах.
+      button.button.mt-5 УЗНАТЬ БОЛЬШЕ
+    .hero.wrap
+      ul.hero__list
+        li.hero__list-item 
+            .hero__list-item-content
+              img(src="./images/earth-globe.svg", alt="", srcset="").hero__list-item-img
+              .hero__list-item-title.mt-5
+                span РАБОТАЕМ ПО ВСЕМУ МИРУ
+
+        li.hero__list-item 
+          .hero__list-item-content
+            img(src="./images/clock-on-circular.svg", alt="", srcset="").hero__list-item-img
+            .hero__list-item-title.mt-5
+                span СОБЛЮДАЕМ СРОКИ
+
+        li.hero__list-item 
+          .hero__list-item-content
+            img(src="./images/business-man.svg", alt="", srcset="").hero__list-item-img
+            .hero__list-item-title.mt-5
+                span ОТВЕТСТВЕННЫЙ ПЕРСОНАЛ
+  section.about.wrap.mt-100
+    img(src="./images/worker.png", alt="", srcset="").about__img.mr-5
+    .about__container
+      .about__header.mb-2 
+        span.long-line.long-line_other.mr-2  ——
+        span.about__headers О КОМПАНИИ
+      p.about__name.mb-4 Plubmbit - это то, чем&nbsp;мы&nbsp;занимаемся
+      p.about__content.mb-3 Мы являемся отмеченной наградами сантехнической компанией с более чем 20-летним опытом работы в этом бизнесе. Мы предоставляем широкий спектр услуг как для жилых, так и для коммерческих клиентов.
+      p.about__content.mb-6 Ни одна работа не будет слишком большой или слишком маленькой, мы вас прикроем. В дополнение к нашим услугам, вы можете посетить наш магазин для широкого спектра сантехнических принадлежностей и оборудования. Когда дело доходит до сантехники, мы - ваш универсальный магазин.
+      button.button УЗНАТЬ БОЛЬШЕ
+  section.categories.pt-100.mt-100 
+    .wrap
+      .categories__header.mb-2
+        span.long-line.long-line_other.mr-2  ——
+        span.categories__header-text ТОВАРЫ 
+      span.categories__title Ремонт
+      ul.categories__list.mt-5.pb-11
+        li.categories__list-item
+          a(href="#") 
+            img(src="./images/category_bath.png", alt="", srcset="")
+            .categories__name-bar 
+              p.categories__name Ванная комната
+        
+        li.categories__list-item
+          a(href="#") 
+            img(src="./images/category_kichen.png", alt="", srcset="")
+            .categories__name-bar 
+              p.categories__name Кухни
+        
+        li.categories__list-item
+          a(href="#") 
+            img(src="./images/category_sanuzel.png", alt="", srcset="")
+            .categories__name-bar 
+              p.categories__name Санузел
