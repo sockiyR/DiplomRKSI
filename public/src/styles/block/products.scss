@@ -1,0 +1,26 @@
+.products {
+
+    &__container {
+        max-width: 230px;
+    }
+
+    &__short-description {
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.02em;
+
+        color: #333333;
+    }
+    &__img-shower{
+        height: 350px;
+    }
+    &__img-bath{
+        height: 100px;
+    }
+    &__img-sink{
+        height: 230px;
+    }
+   &__img-mixer{
+       height: 240px;
+   }
+}

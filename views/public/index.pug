@@ -1,18 +1,19 @@
 extends layout
 block head
   link(rel='stylesheet', href='./assets/style.css')
-  //- link(rel="stylesheet", href="./assets/vendor.css")
+  link(rel="stylesheet", href="./assets/vendor.css")
 
 block content
   section.header 
     .wrap.header__content 
       img(src="./images/logo.svg", alt="", srcset="").header__logo
       ul.header__list 
-        li.header__list-item.mr-4 Категории
         li.header__list-item.mr-4
-           a(href="#") О компании
+          a(href="#categories") Категории
         li.header__list-item.mr-4
-           a(href="#") контакты
+          a(href="#about") О компании
+        li.header__list-item.mr-4
+          a(href="#") контакты
         li.header__list-item
           a(href="#")  Мы на карте
   section.order 
@@ -43,6 +44,7 @@ block content
             .hero__list-item-title.mt-5
                 span ОТВЕТСТВЕННЫЙ ПЕРСОНАЛ
   section.about.wrap.mt-100
+    a(name="about") 
     img(src="./images/worker.png", alt="", srcset="").about__img.mr-5
     .about__container
       .about__header.mb-2 
@@ -53,11 +55,12 @@ block content
       p.about__content.mb-6 Ни одна работа не будет слишком большой или слишком маленькой, мы вас прикроем. В дополнение к нашим услугам, вы можете посетить наш магазин для широкого спектра сантехнических принадлежностей и оборудования. Когда дело доходит до сантехники, мы - ваш универсальный магазин.
       button.button УЗНАТЬ БОЛЬШЕ
   section.categories.pt-100.mt-100 
+    a(name="categories") 
     .wrap
       .categories__header.mb-2
         span.long-line.long-line_other.mr-2  ——
-        span.categories__header-text ТОВАРЫ 
-      span.categories__title Ремонт
+        span.paragraf__title КАТЕГОРИИ 
+      span.paragraf__name Ремонт
       ul.categories__list.mt-5.pb-11
         li.categories__list-item
           a(href="#") 
@@ -76,3 +79,204 @@ block content
             img(src="./images/category_sanuzel.png", alt="", srcset="")
             .categories__name-bar 
               p.categories__name Санузел
+  section.products.wrap
+    .products__header.mt-100.mb-2
+      span.long-line.long-line_other.mr-2  ——
+      span.paragraf__title ТОВАРЫ 
+    span.paragraf__name.mt-5 Ванные
+
+    .swiper-container.mt-4.mb-4
+      .swiper-wrapper
+        .swiper-slide.products__container 
+          img(src="./images/photo_1.jpg", alt="", srcset="").products__img-bath
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/photo_2.jpg", alt="", srcset="").products__img-bath
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/photo_3.jpeg", alt="", srcset="").products__img-bath
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/photo_5.jpeg", alt="", srcset="").products__img-bath
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/photo_6.jpg", alt="", srcset="").products__img-bath
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/photo_7.jpg", alt="", srcset="").products__img-bath
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/photo_8.jpg", alt="", srcset="").products__img-bath
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+          
+      .swiper-button-next
+      .swiper-button-prev
+
+    span.paragraf__name Душевые кабинки
+    .swiper-container.mt-4.mb-4
+      .swiper-wrapper
+        .swiper-slide.products__container 
+          img(src="./images/shower_1.jpeg", alt="", srcset="").products__img-shower
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/shower_2.jpg", alt="", srcset="").products__img-shower
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/shower_3.jpg", alt="", srcset="").products__img-shower
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/shower_4.jpg", alt="", srcset="").products__img-shower
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/shower_5.jpeg", alt="", srcset="").products__img-shower
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/shower_6.jpeg", alt="", srcset="").products__img-shower
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/shower_7.jpg", alt="", srcset="").products__img-shower
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+          
+      .swiper-button-next
+      .swiper-button-prev
+    
+    span.paragraf__name Раковины
+    .swiper-container.mt-4.mb-4
+      .swiper-wrapper
+        .swiper-slide.products__container 
+          img(src="./images/sink_1.jpeg", alt="", srcset="").products__img-sink
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/sink_2.jpeg", alt="", srcset="").products__img-sink
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/sink_3.jpeg", alt="", srcset="").products__img-sink
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/sink_4.jpeg", alt="", srcset="").products__img-sink
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/sink_5.jpg", alt="", srcset="").products__img-sink
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/sink_6.jpg", alt="", srcset="").products__img-sink
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+      .swiper-button-next
+      .swiper-button-prev
+  
+  
+    span.paragraf__name Смесители
+    .swiper-container.mt-4.mb-4
+      .swiper-wrapper
+        .swiper-slide.products__container 
+          img(src="./images/mixer_1.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/mixer_2.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/mixer_3.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/mixer_4.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/mixer_5.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/mixer_6.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/mixer_7.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+          
+      .swiper-button-next
+      .swiper-button-prev
+
+    span.paragraf__name Полотенцесушители
+      .swiper-container.mt-4.mb-4
+        .swiper-wrapper
+          .swiper-slide.products__container 
+            img(src="./images/heated_towel_rail_1.jpg", alt="", srcset="").products__img-mixer
+            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+          .swiper-slide.products__container 
+            img(src="./images/heated_towel_rail_2.jpg", alt="", srcset="").products__img-mixer
+            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+          .swiper-slide.products__container 
+            img(src="./images/heated_towel_rail_3.jpg", alt="", srcset="").products__img-mixer
+            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+          .swiper-slide.products__container 
+            img(src="./images/heated_towel_rail_4.jpeg", alt="", srcset="").products__img-mixer
+            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+          .swiper-slide.products__container 
+            img(src="./images/heated_towel_rail_5.jpg", alt="", srcset="").products__img-mixer
+            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+          .swiper-slide.products__container 
+            img(src="./images/heated_towel_rail_6.jpg", alt="", srcset="").products__img-mixer
+            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-button-next
+        .swiper-button-prev 
+
+    span.paragraf__name Унитазы
+    .swiper-container.mt-4.mb-4
+      .swiper-wrapper
+        .swiper-slide.products__container 
+          img(src="./images/restroom_1.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/restroom_2.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/restroom_3.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/restroom_4.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/restroom_5.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/restroom_6.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+
+        .swiper-slide.products__container 
+          img(src="./images/restroom_7.jpg", alt="", srcset="").products__img-mixer
+          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+          
+      .swiper-button-next
+      .swiper-button-prev

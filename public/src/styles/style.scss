@@ -1,6 +1,7 @@
 @import "./utils/wrap.scss";
 @import "./utils/m.scss";
 @import "./utils/p.scss";
+@import 'swiper/swiper-bundle.css';
 
 // ************************************************
 @import "./fonts.scss";
@@ -12,16 +13,17 @@
 @import "./block/hero.scss";
 @import "./block/about.scss";
 @import "./block/categories.scss";
+@import "./block/paragraf.scss";
+@import "./block/products.scss";
 // ************************************************
 * {
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
 }
-// body{
-//     max-width: 1440px;
-//     margin: 0 auto;
-// }
+body{
+    background-color: #fff;
+}
 img{
     width: 100%;
     height: 100%;
