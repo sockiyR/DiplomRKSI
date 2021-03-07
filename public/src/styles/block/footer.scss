@@ -1,0 +1,13 @@
+.footer{
+    background-color: #FAFAFA;
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include _768 {
+            justify-content: center;
+        }
+    }
+}

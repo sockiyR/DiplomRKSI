@@ -391,14 +391,31 @@
   src: url("/fonts/Montserrat-Bold.woff") format("woff");
   font-weight: 800;
 }
-.header {
-  height: 70px;
-  display: flex;
-  align-items: center;
-}
 .header__content {
   display: flex;
+  height: 70px;
   justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .header__content {
+    justify-content: center;
+    box-shadow: 0px 8px 15px rgba(219, 219, 219, 0.25);
+  }
+}
+.header__content-mobil {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header__content-mobil {
+    justify-content: center;
+    height: 420px;
+    position: absolute;
+    background-color: #FFF;
+  }
+}
+.header__content-mobil_active {
+  display: flex;
 }
 .header__logo {
   max-width: 110px;
@@ -406,11 +423,34 @@
 .header__list {
   display: flex;
 }
+@media (max-width: 768px) {
+  .header__list {
+    display: none;
+  }
+}
+.header__list_mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .header__list_mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 300px;
+  }
+}
 .header__list-item {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 17px;
   color: #373737;
+}
+@media (max-width: 768px) {
+  .header__list-item_mobile {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+  }
 }
 
 .order {
@@ -596,6 +636,103 @@
 }
 .products__img-mixer {
   height: 240px;
+}
+
+.footer {
+  background-color: #FAFAFA;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .footer__container {
+    justify-content: center;
+  }
+}
+
+#map {
+  width: 510px;
+  height: 325px;
+}
+
+.contacts {
+  max-width: 470px;
+}
+@media (max-width: 768px) {
+  .contacts {
+    margin-top: 32px;
+  }
+}
+.contacts__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.contacts__list-item {
+  max-width: 230px;
+}
+.contacts__list-header {
+  display: block;
+  font-size: 8px;
+  line-height: 10px;
+  letter-spacing: 0.02em;
+  color: #666666;
+}
+.contacts__list-content {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  color: #333333;
+}
+
+.hamburger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 36px;
+    top: 15px;
+    width: 32px;
+    padding-top: 20px;
+    height: 25px;
+    text-align: center;
+    align-items: center;
+  }
+}
+.hamburger__line-container {
+  position: relative;
+  width: 24px;
+  height: 12px;
+}
+.hamburger__line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: rgba(51, 51, 51, 0.7);
+  position: absolute;
+  left: 0;
+  transition: transform 175ms;
+}
+:last-child .hamburger__line_left-active {
+  transform: translateY(4px) rotate(45deg);
+}
+.hamburger__line_right-active {
+  transform: translateY(-5px) rotate(-45deg);
+}
+.hamburger__line_none {
+  display: none;
+}
+.hamburger__line_midl {
+  top: -9px;
+}
+.hamburger__line:last-child {
+  bottom: 0;
 }
 
 * {

@@ -2,7 +2,7 @@ extends layout
 block head
   link(rel='stylesheet', href='./assets/style.css')
   link(rel="stylesheet", href="./assets/vendor.css")
-
+  script(src="https://api-maps.yandex.ru/2.1/?apikey=93cbc4c4-15e5-4364-8ce7-c2c04785f629&lang=ru_RU" type="text/javascript")
 block content
   section.header 
     .wrap.header__content 
@@ -16,6 +16,26 @@ block content
           a(href="#") контакты
         li.header__list-item
           a(href="#")  Мы на карте
+
+      .hamburger
+        .hamburger__line-container
+            span.hamburger__line
+            span.hamburger__line.span.hamburger__line_midl
+            span.hamburger__line
+
+
+    .wrap.header__content-mobil 
+      ul.header__list.header__list_mobile 
+        li.header__list-item.header__list-item_mobile
+          a(href="#categories") Категории
+        li.header__list-item.header__list-item_mobile
+          a(href="#about") О компании
+        li.header__list-item.header__list-item_mobile
+          a(href="#") контакты
+        li.header__list-item.header__list-item_mobile
+          a(href="#")  Мы на карте
+
+
   section.order 
     .wrap.pt-20
       span.long-line.long-line_order.mr-2  ——
@@ -280,3 +300,25 @@ block content
           
       .swiper-button-next
       .swiper-button-prev
+  
+  section.footer.mt-100
+    .footer__container.wrap.pt-8.pb-8
+      #map
+      .contacts
+        .products__header.mb-2
+          span.long-line.long-line_other.mr-2  ——
+          span.paragraf__title КОНТАКТЫ 
+        span.paragraf__name Узнать о нас?
+
+        ul.contacts__list.mt-7
+          li.contacts__list-item 
+            span.contacts__list-header Контактный телефон:
+            span.contacts__list-content +7 (952) 580-15-29
+
+          li.contacts__list-item 
+            span.contacts__list-header Адрес:
+            span.contacts__list-content г. Росто-на-Дону, ул. Доватора, д. 279а
+
+          li.contacts__list-item
+            span.contacts__list-header Почта для связи:
+            span.contacts__list-content sotskyrr@gmail.com

@@ -1,7 +1,7 @@
 $lg : 'max-width: 1200px';
 $minlg : 'min-width: 1200px';
 $md : 'max-width: 1023px';
-$sm : 'max-width: 767px';
+$sm : 'max-width: 768px';
 $esm : 'max-width: 374px';
 $min_sm : "min-width: 768px";
 
@@ -21,12 +21,12 @@ $min_sm : "min-width: 768px";
         @content;
     }
 }
-@mixin _767 {
+@mixin _768 {
     @media ($sm){
         @content;
     }
 }
-@mixin _767_ {
+@mixin _768_ {
     @media ($min_sm){
         @content;
     }

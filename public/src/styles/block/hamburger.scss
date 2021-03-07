@@ -1,0 +1,52 @@
+.hamburger {
+    display: none;
+
+
+    @include _768 {
+        display: block;
+        position: absolute;
+        right: 36px;
+        top: 15px;
+        width: 32px;
+        padding-top: 20px;
+        height: 25px;
+        text-align: center;
+        align-items: center;
+    }
+
+    &__line-container {
+        position: relative;
+        width: 24px;
+        height: 12px;
+    }
+
+    &__line {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: rgba(51, 51, 51, 0.7);
+        position: absolute;
+        left: 0;
+        transition: transform 175ms;
+
+        :last-child &_left-active {
+            transform: translateY(4px) rotate(45deg);
+        }
+
+        &_right-active {
+            transform: translateY(-5px) rotate(-45deg);
+        }
+
+        &_none {
+            display: none;
+        }
+
+        &_midl {
+            top: -9px;
+        }
+
+        &:last-child {
+            bottom: 0;
+        }
+    }
+}

@@ -1,7 +1,67 @@
 var app;
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./js/public/header.js":
+/*!*****************************!*\
+  !*** ./js/public/header.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../../node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+document.querySelectorAll(".header").forEach(function (header) {
+  header.querySelector(".hamburger").onclick = function () {
+    header.querySelector(".hamburger__line-container").querySelector(".hamburger__line:first-child").classList.toggle("hamburger__line_left-active");
+    header.querySelector(".hamburger__line-container").querySelector(".hamburger__line:last-child").classList.toggle("hamburger__line_right-active");
+    header.querySelector(".hamburger__line_midl").classList.toggle("hamburger__line_none");
+
+    if (document.documentElement.clientWidth <= 1200) {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header__content-mobil ").is(":hidden")) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header__content-mobil ").slideDown("slow");
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header__content-mobil ").css("display", "flex");
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header__content-mobil ").slideUp("slow");
+      }
+    } else {
+      return;
+    }
+  };
+});
+
+/***/ }),
+
+/***/ "./js/public/map.js":
+/*!**************************!*\
+  !*** ./js/public/map.js ***!
+  \**************************/
+/***/ (() => {
+
+ymaps.ready(init);
+
+function init() {
+  // Создание карты.
+  // центрирование и задание зума  а так же настройка контроллеров
+  var map = new ymaps.Map("map", {
+    center: [47.23698407426421, 39.5839845],
+    zoom: 15,
+    controls: ['zoomControl']
+  });
+  map.behaviors.disable('scrollZoom'); // установка маркера на карте и его катомизация
+
+  var myPlacemark = new ymaps.Placemark([47.23698407426421, 39.5839845], {}, {
+    iconLayout: 'default#image',
+    iconImageHref: './images/map_icon.png',
+    iconImageSize: [30, 42],
+    iconImageOffset: [-5, -38]
+  });
+  map.geoObjects.add(myPlacemark);
+}
+
+/***/ }),
 
 /***/ "./js/public/script.js":
 /*!*****************************!*\
@@ -9,9 +69,15 @@ var app;
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./swiper */ "./js/public/swiper.js");
+/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map */ "./js/public/map.js");
+/* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_map__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./js/public/header.js");
 // import "./swiper-bath";
+
+
 
 
 /***/ }),
@@ -22,6 +88,7 @@ __webpack_require__.r(__webpack_exports__);
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "../../node_modules/swiper/swiper-bundle.esm.js");
 
@@ -73,7 +140,7 @@ document.querySelectorAll(".swiper-container").forEach(function (block) {
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -86,6 +153,18 @@ document.querySelectorAll(".swiper-container").forEach(function (block) {
 /******/ 	// It's empty as some runtime module handles the default behavior
 /******/ 	__webpack_require__.x = x => {};
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

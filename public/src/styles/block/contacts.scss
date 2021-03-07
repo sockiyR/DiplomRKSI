@@ -1,0 +1,32 @@
+.contacts {
+    max-width: 470px;
+    @include _768 {
+        margin-top: 32px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__list-item {
+        max-width: 230px;
+    }
+
+    &__list-header {
+        display: block;
+        font-size: 8px;
+        line-height: 10px;
+        letter-spacing: 0.02em;
+        color: #666666;
+    }
+
+    &__list-content {
+        display: block;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.02em;
+        color: #333333;
+    }
+}
