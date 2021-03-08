@@ -1,16 +1,42 @@
 .hero {
     position: relative;
-    top: 25%;
+    bottom: -64px;
+
+    @include _1200 {
+        bottom: -45px;
+    }
+
+    @include _768 {
+        bottom: -175px;
+        width: 90%;
+    }
+
+    
+    @include _374{
+     bottom: -81px;       
+    }
 
     &__list {
         display: flex;
         justify-content: space-between;
+         
+        @include _768 {
+            height: 140px;
+        }
+
     }
 
     &__list-item {
         background: #FFFFFF;
         box-shadow: 0px 8px 15px rgba(46, 21, 21, 0.16);
         border-radius: 8px;
+
+        @include _768 {
+            display: block;
+            max-width: 140px;
+            width: 140px;
+            text-align: center;
+        }
     }
 
     &__list-item-content {
@@ -19,6 +45,12 @@
         flex-direction: column;
         text-align: center;
         align-items: center;
+
+        @include _768 {
+            margin-top: 30px;
+            padding: 0;
+            display: block;
+        }
     }
 
     &__list-item-img {
@@ -33,5 +65,9 @@
         line-height: 20px;
         letter-spacing: 0.02em;
         color: #333333;
+
+        @include _768 {
+            display: none;
+        }
     }
 }

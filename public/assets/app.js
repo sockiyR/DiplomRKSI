@@ -63,6 +63,62 @@ function init() {
 
 /***/ }),
 
+/***/ "./js/public/popupC.js":
+/*!*****************************!*\
+  !*** ./js/public/popupC.js ***!
+  \*****************************/
+/***/ (() => {
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Popup = /*#__PURE__*/function () {
+  function Popup(inputBTN, section) {
+    _classCallCheck(this, Popup);
+
+    this.inputBTN = inputBTN;
+    this.section = section;
+  }
+
+  _createClass(Popup, [{
+    key: "PopCreated",
+    value: function PopCreated() {
+      var content = this.inputBTN.attr("data-popup");
+      this.section.append(content);
+      return this.section;
+    }
+  }]);
+
+  return Popup;
+}();
+
+/***/ }),
+
+/***/ "./js/public/product-popup.js":
+/*!************************************!*\
+  !*** ./js/public/product-popup.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _popupC__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popupC */ "./js/public/popupC.js");
+/* harmony import */ var _popupC__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_popupC__WEBPACK_IMPORTED_MODULE_0__);
+ // data-popup
+
+document.querySelectorAll(".swiper-container").forEach(function (block) {
+  block.querySelectorAll(".swiper-slide").forEach(function (slide) {
+    slide.onclick = function () {
+      alert("ЖЕПА");
+    };
+  });
+});
+
+/***/ }),
+
 /***/ "./js/public/script.js":
 /*!*****************************!*\
   !*** ./js/public/script.js ***!
@@ -75,7 +131,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map */ "./js/public/map.js");
 /* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_map__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./js/public/header.js");
+/* harmony import */ var _product_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product-popup */ "./js/public/product-popup.js");
 // import "./swiper-bath";
+
 
 
 
@@ -103,13 +161,13 @@ document.querySelectorAll(".swiper-container").forEach(function (block) {
       prevEl: block.querySelector('.swiper-button-prev')
     },
     breakpoints: {
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 20
+      300: {
+        slidesPerView: 2 // spaceBetween: 20   
+
       },
       480: {
         slidesPerView: 3,
-        spaceBetween: 30
+        spaceBetween: 20
       },
       640: {
         slidesPerView: 4,

@@ -1,6 +1,14 @@
 .categories {
     background-color: #FAFAFA;
 
+    &__header{
+         
+        @include _768 {
+            max-width: 90%;
+            margin: 0 auto 16px;
+        }
+    }
+
     &__header-text {
         font-weight: 600;
         font-size: 14px;
@@ -19,7 +27,8 @@
     }
     &__list{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
     &__list-item {
         max-width: 320px;

@@ -2,3 +2,4 @@
 import "./swiper";
 import "./map";
 import "./header";
+import "./product-popup";

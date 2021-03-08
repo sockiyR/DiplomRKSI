@@ -12,10 +12,8 @@ document.querySelectorAll(".header").forEach(header=>{
             } else {
                 $(`.header__content-mobil `).slideUp("slow");
             }
-
         } else {
             return;
         }
-
     };
 });

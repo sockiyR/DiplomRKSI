@@ -12,13 +12,13 @@ document.querySelectorAll(".swiper-container").forEach(block => {
         },
         
         breakpoints: {
-            320: {
+            300: {
               slidesPerView: 2,
-              spaceBetween: 20
+              // spaceBetween: 20   
             },
             480: {
               slidesPerView: 3,
-              spaceBetween: 30
+              spaceBetween: 20,
             },
             640: {
               slidesPerView: 4,
