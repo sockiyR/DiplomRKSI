@@ -21,6 +21,13 @@
 @import "./block/contacts.scss";
 @import "./block/hamburger.scss";
 // ************************************************
+@import "./block/popup.scss";
+@import "./block/popup-content.scss";
+@import "./block/popup-header.scss";
+@import "./block/close.scss";
+@import "./block/popup-body.scss";
+
+// ************************************************
 * {
     margin: 0;
     padding: 0;

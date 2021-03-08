@@ -108,7 +108,7 @@ block content
 
     .swiper-container.mt-4.mb-4
       .swiper-wrapper
-        .swiper-slide.products__container 
+        .swiper-slide.products__container(data-popup = '<div class="popup"> <div class="popup-content"> <div class="popup-header"> <h2>some text</h2> <span class="close">&times;</span> </div> <div class="popup-body"> <ul id="dictionary_ru"> <li class= " loop.index">2</li> <li class= " loop.index">2</li> <li class= " loop.index">2</li> </ul> <ul id="dictionary_en"> <li class= "loop.index">1</li> <li class= "loop.index">1</li> <li class= "loop.index">1</li> </ul> </div> <div class="popup-footer"> <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum maiores atque possimus temporibus, provident modi et fuga, sunt repellat id odio delectus minima nam? Assumenda praesentium consectetur doloremque commodi sit.</h3> </div> </div>') 
           img(src="./images/photo_1.jpg", alt="", srcset="").products__img-bath
           span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
 
@@ -302,6 +302,8 @@ block content
       .swiper-button-next
       .swiper-button-prev
   
+  section#PopupContainer
+
   section.footer.mt-100
     .footer__container.wrap.pt-8.pb-8
       #map

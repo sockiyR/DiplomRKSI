@@ -63,40 +63,6 @@ function init() {
 
 /***/ }),
 
-/***/ "./js/public/popupC.js":
-/*!*****************************!*\
-  !*** ./js/public/popupC.js ***!
-  \*****************************/
-/***/ (() => {
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Popup = /*#__PURE__*/function () {
-  function Popup(inputBTN, section) {
-    _classCallCheck(this, Popup);
-
-    this.inputBTN = inputBTN;
-    this.section = section;
-  }
-
-  _createClass(Popup, [{
-    key: "PopCreated",
-    value: function PopCreated() {
-      var content = this.inputBTN.attr("data-popup");
-      this.section.append(content);
-      return this.section;
-    }
-  }]);
-
-  return Popup;
-}();
-
-/***/ }),
-
 /***/ "./js/public/product-popup.js":
 /*!************************************!*\
   !*** ./js/public/product-popup.js ***!
@@ -105,15 +71,21 @@ var Popup = /*#__PURE__*/function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _popupC__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./popupC */ "./js/public/popupC.js");
-/* harmony import */ var _popupC__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_popupC__WEBPACK_IMPORTED_MODULE_0__);
- // data-popup
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../../node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 document.querySelectorAll(".swiper-container").forEach(function (block) {
   block.querySelectorAll(".swiper-slide").forEach(function (slide) {
-    slide.onclick = function () {
-      alert("ЖЕПА");
-    };
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(slide).click(function () {
+      var content = jquery__WEBPACK_IMPORTED_MODULE_0___default()(slide).attr("data-popup");
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#PopupContainer").append(content);
+      document.querySelector(".popup").style.display = "block";
+
+      document.querySelector('.close').onclick = function () {
+        document.querySelector(".popup").style.display = "none";
+        document.querySelector(".popup").remove();
+      };
+    });
   });
 });
 

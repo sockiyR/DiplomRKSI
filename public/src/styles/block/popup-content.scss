@@ -1,0 +1,25 @@
+
+.popup-content {
+    position: relative;
+    background-color: #5c5c5ca1;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    top: 35%;
+    animation-name: topdown;
+    animation-duration: .6s;
+
+}
+
+
+@keyframes topdown {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 35%;
+        opacity: 1;
+    }
+}

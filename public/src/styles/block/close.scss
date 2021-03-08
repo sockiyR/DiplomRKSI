@@ -1,0 +1,13 @@
+.close {
+    color: rgb(223, 223, 223);
+    font-size: 28px;
+    font-weight: 700;
+    margin-left: auto;
+}
+
+.close:hover,
+.close:focus {
+    color: #333333;
+    text-decoration: none;
+    cursor: pointer;
+}
