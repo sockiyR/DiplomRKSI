@@ -7,7 +7,7 @@ document.querySelectorAll(".swiper-container").forEach(block => {
             document.querySelector(".popup").style.display = "block";
             document.querySelector('.close').onclick = () =>{
                 document.querySelector(".popup").style.display = "none";
-                document.querySelector(".popup").remove();  
+                document.querySelector(".popup").remove();
             }
         });
     });

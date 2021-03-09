@@ -4,7 +4,7 @@
          
         @include _768 {
             max-width: 90%;
-            margin: 0 auto 16px;
+            margin: 16px auto 16px;
         }
     }
 
@@ -38,5 +38,35 @@
 
     &__img-mixer {
         height: 240px;
+    }
+    // style to popup
+    &__name{
+        padding: 8px 0;
+         
+        @include _768 {
+            font-size: 12px;
+        }
+    }
+    &__popup-header{
+        color: #333333;
+        @include _768 {
+            font-size: 12px;
+        }
+    }
+    &__popup-img{
+        max-width: 50%;
+    }
+    &__popup-description{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__popup-list{
+        margin-top: 16px;
+        margin-bottom: 32px;
+    }
+    &__popup-list-item{
+        padding: 8px 0;
+        border-bottom:  1px solid rgba(51, 51, 51, 0.1);;
     }
 }

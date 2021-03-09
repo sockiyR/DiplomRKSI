@@ -23,7 +23,9 @@
         @include _768 {
             height: 140px;
         }
-
+        @include _374{
+            height: 80px;
+        }
     }
 
     &__list-item {
@@ -36,6 +38,10 @@
             max-width: 140px;
             width: 140px;
             text-align: center;
+        }
+
+        @include _374{
+            width: 80px;
         }
     }
 
@@ -50,6 +56,10 @@
             margin-top: 30px;
             padding: 0;
             display: block;
+        }
+
+        @include _374{
+            margin-top: 4px;
         }
     }
 

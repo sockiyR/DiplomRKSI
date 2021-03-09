@@ -536,6 +536,7 @@
   border: none;
   border-radius: 4px;
   padding: 15px 49px;
+  text-align: center;
 }
 
 .hero {
@@ -567,6 +568,11 @@
     height: 140px;
   }
 }
+@media (max-width: 374px) {
+  .hero__list {
+    height: 80px;
+  }
+}
 .hero__list-item {
   background: #FFFFFF;
   box-shadow: 0px 8px 15px rgba(46, 21, 21, 0.16);
@@ -578,6 +584,11 @@
     max-width: 140px;
     width: 140px;
     text-align: center;
+  }
+}
+@media (max-width: 374px) {
+  .hero__list-item {
+    width: 80px;
   }
 }
 .hero__list-item-content {
@@ -592,6 +603,11 @@
     margin-top: 30px;
     padding: 0;
     display: block;
+  }
+}
+@media (max-width: 374px) {
+  .hero__list-item-content {
+    margin-top: 4px;
   }
 }
 .hero__list-item-img {
@@ -726,7 +742,7 @@
 @media (max-width: 768px) {
   .products__header {
     max-width: 90%;
-    margin: 0 auto 16px;
+    margin: 16px auto 16px;
   }
 }
 .products__container {
@@ -753,6 +769,38 @@
 .products__img-mixer {
   height: 240px;
 }
+.products__name {
+  padding: 8px 0;
+}
+@media (max-width: 768px) {
+  .products__name {
+    font-size: 12px;
+  }
+}
+.products__popup-header {
+  color: #333333;
+}
+@media (max-width: 768px) {
+  .products__popup-header {
+    font-size: 12px;
+  }
+}
+.products__popup-img {
+  max-width: 50%;
+}
+.products__popup-description {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+.products__popup-list {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+.products__popup-list-item {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+}
 
 .footer {
   background-color: #FAFAFA;
@@ -771,6 +819,7 @@
 #map {
   width: 510px;
   height: 325px;
+  margin: 0 auto;
 }
 
 .contacts {
@@ -865,13 +914,14 @@
 
 .popup-content {
   position: relative;
-  background-color: #5c5c5ca1;
+  background-color: #FFF;
   margin: auto;
   padding: 0;
   width: 80%;
   top: 35%;
   animation-name: topdown;
   animation-duration: 0.6s;
+  border-radius: 8px;
 }
 
 @keyframes topdown {
@@ -889,6 +939,8 @@
   color: #fff;
   display: flex;
   padding: 2px 16px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .close {
@@ -907,12 +959,14 @@
 
 .popup-body {
   padding: 2px 16px;
+  max-width: 95%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   justify-items: center;
   justify-self: center;
   padding: 20px 0;
+  margin: 0 auto;
 }
 
 * {
