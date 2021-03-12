@@ -1,7 +1,7 @@
 extends layout
 block head
-  link(rel='stylesheet', href='./assets/style.css')
-  link(rel="stylesheet", href="./assets/vendor.css")
+  link(rel='stylesheet', href='/assets/style.css')
+  link(rel="stylesheet", href="/assets/vendor.css")
   script(src="https://api-maps.yandex.ru/2.1/?apikey=93cbc4c4-15e5-4364-8ce7-c2c04785f629&lang=ru_RU" type="text/javascript")
 block content
   section.header 
@@ -325,3 +325,7 @@ block content
           li.contacts__list-item
             span.contacts__list-header Почта для связи:
             span.contacts__list-content sotskyrr@gmail.com
+
+block footer
+      script(src="/assets/vendor.js")
+      script(src="/assets/app.js")

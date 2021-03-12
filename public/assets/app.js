@@ -6,13 +6,10 @@ var app;
 /*!*****************************!*\
   !*** ./js/public/header.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../../node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "../../node_modules/jquery/dist/jquery.js");
+// import $ from "jquery";
 document.querySelectorAll(".header").forEach(function (header) {
   header.querySelector(".hamburger").onclick = function () {
     header.querySelector(".hamburger__line-container").querySelector(".hamburger__line:first-child").classList.toggle("hamburger__line_left-active");
@@ -20,11 +17,11 @@ document.querySelectorAll(".header").forEach(function (header) {
     header.querySelector(".hamburger__line_midl").classList.toggle("hamburger__line_none");
 
     if (document.documentElement.clientWidth <= 1200) {
-      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header__content-mobil ").is(":hidden")) {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header__content-mobil ").slideDown("slow");
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header__content-mobil ").css("display", "flex");
+      if ($(".header__content-mobil ").is(":hidden")) {
+        $(".header__content-mobil ").slideDown("slow");
+        $(".header__content-mobil ").css("display", "flex");
       } else {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".header__content-mobil ").slideUp("slow");
+        $(".header__content-mobil ").slideUp("slow");
       }
     } else {
       return;
@@ -67,18 +64,15 @@ function init() {
 /*!************************************!*\
   !*** ./js/public/product-popup.js ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../../node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "../../node_modules/jquery/dist/jquery.js");
+// import $ from "jquery";
 document.querySelectorAll(".swiper-container").forEach(function (block) {
   block.querySelectorAll(".swiper-slide").forEach(function (slide) {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()(slide).click(function () {
-      var content = jquery__WEBPACK_IMPORTED_MODULE_0___default()(slide).attr("data-popup");
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()("#PopupContainer").append(content);
+    $(slide).click(function () {
+      var content = $(slide).attr("data-popup");
+      $("#PopupContainer").append(content);
       document.querySelector(".popup").style.display = "block";
 
       document.querySelector('.close').onclick = function () {
@@ -103,7 +97,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./map */ "./js/public/map.js");
 /* harmony import */ var _map__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_map__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./header */ "./js/public/header.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _product_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product-popup */ "./js/public/product-popup.js");
+/* harmony import */ var _product_popup__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_product_popup__WEBPACK_IMPORTED_MODULE_3__);
 // import "./swiper-bath";
 
 

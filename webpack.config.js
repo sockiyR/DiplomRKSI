@@ -11,9 +11,9 @@ module.exports = {
     context:path.resolve(__dirname, 'public/src'),
     entry: {
         app: './js/public/script.js',
-        // admin:'./js/private/script.js',
+        admin:'./js/private/script.js',
         style: './styles/style.scss',
-        // styleAdmin: './styles/admin.scss',
+        styleAdmin: './styles/admin.scss',
     }, 
     output: { //куда сохронять и под каким именем
         path: path.resolve(__dirname, 'public/assets'),

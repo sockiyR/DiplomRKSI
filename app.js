@@ -3,11 +3,16 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-// const session = require('express-session');
+const session = require('express-session');
 
-var indexRouter = require('./routes/public/index');
+const isAdmin = require("./module/isAdmin");
 
-var app = express();
+
+const indexRouter = require('./routes/public/index');
+const loginRouter = require('./routes/private/login');
+const bathroomRouter = require("./routes/private/bathroom");
+const { error } = require('console');
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,9 +26,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
+app.use(session({
+  name: "session-cookie",
+  secret: 'rfrjqnjjxtymdf;ysgfhjkm',
+  maxAge: null,
+  saveUninitialized: true,
+  resave: true,
+}));
 
 
 app.use('/', indexRouter);
+app.use('/adminPanel/login', loginRouter);
+app.use('/adminPanel/bathroom', isAdmin, bathroomRouter);
 
 
 
@@ -40,7 +54,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json(err);
 });
 
 module.exports = app;

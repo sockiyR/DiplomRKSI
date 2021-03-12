@@ -1,0 +1,58 @@
+extends layout
+block head
+  link(rel="stylesheet", href="/assets/styleAdmin.css")
+block content
+
+  .card.text-center
+        .card-header
+            ul.nav.nav-pills.card-header-pills
+                li.nav-item
+                    a.nav-link.news-CRUD-button.active(href='/adminPanel/bathroom') Ванные
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Душевые кабининки
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Раковины
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Смесители
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Полотецесушители
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Унитазы
+        .card-body.mx-auto.w-100
+            .card-body-news-CRUD
+                a(href="/adminPanel/bathroom/addBathroom").btn.btn-success.float-left.mb-3 Добавить
+                table.table
+                    thead
+                        tr
+                        th(scope='col') Код товара\Наименование
+                        th(scope='col') Производитель
+                        th(scope='col') Каркас 
+                        th(scope='col') Слив-перелив
+                        th(scope='col') Фронтальная панель
+                        th(scope='col') Длина (см)
+                        th(scope='col') Ширина (см)
+                        th(scope='col') Глубина (см)
+                        th(scope='col') Действия
+                    tbody
+                        each val in bathroomData
+                            tr.card-body-news-CRUD__row
+                                th #{val.arcticul} \ #{val.name}
+                                th #{val.manufacturer}
+                                th #{val.frame}
+                                th #{val.drain}
+                                th #{val.panel}
+                                th #{val.length}
+                                th #{val.width}
+                                th #{val.depth}
+                                td
+                                    form.button-form 
+                                        button.btn.btn-danger.mr-1.delete-entity-button(type='button' name="deleteEntity" data-url-entity='/adminPanel/bathroom/delite' data-id-entity=val.id ) Удалить
+                                        button.btn.btn-warning(type='button' name="updateEntity" data-url-entity='/adminPanel/bathroom/update' data-id-entity= val.id data-name=val.name) Редактировать
+                        
+                        
+
+
+
+block footer
+  script(src="/assets/vendor.js")
+  script(src="/assets/admin.js")

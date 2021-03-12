@@ -1,4 +1,4 @@
-import $ from "jquery";
+// import $ from "jquery";
 document.querySelectorAll(".header").forEach(header=>{
     header.querySelector(".hamburger").onclick=()=>{
         header.querySelector(".hamburger__line-container").querySelector(".hamburger__line:first-child").classList.toggle("hamburger__line_left-active");

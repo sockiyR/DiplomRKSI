@@ -1,0 +1,62 @@
+extends layout
+block head
+  link(rel="stylesheet", href="/assets/styleAdmin.css")
+block content
+
+  .card.text-center
+        .card-header
+            ul.nav.nav-pills.card-header-pills
+                li.nav-item
+                    a.nav-link.news-CRUD-button.active(href='/adminPanel/bathroom') Ванные
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Душевые кабининки
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Раковины
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Смесители
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Полотецесушители
+                li.nav-item
+                    a.nav-link.shares-CRUD-button(href='/') Унитазы
+        .card-body.mx-auto.w-100
+            form.card-body-CRUD
+                .mb-3
+                    label.form-label Арктикул 
+                    input#dateNews.form-control(type='text' value= `${result[0].arcticul}` name="arcticul")
+                .mb-3
+                    label.form-label Производитель 
+                    input#dateNews.form-control(type='text' value= `${result[0].manufacturer}` name="manufacturer")
+                .mb-3
+                    label.form-label Каркас 
+                    input#dateNews.form-control(type='text' value= `${result[0].frame}` name="frame")
+                .mb-3
+                    label.form-label Слив-перелив 
+                    input#dateNews.form-control(type='text' value= `${result[0].frame}` name="drain")
+                .mb-3
+                    label.form-label Фронтальная панель 
+                    input#dateNews.form-control(type='text' value= `${result[0].frame}` name="panel")
+                .mb-3
+                    label.form-label Длина (см) 
+                    input#dateNews.form-control(type='text' value= `${result[0].length}` name="length")
+                .mb-3
+                    label.form-label Ширина (см)
+                    input#dateNews.form-control(type='text' value= `${result[0].width}` name="width")
+                .mb-3
+                    label.form-label Глубина (см)
+                    input#dateNews.form-control(type='text' value= `${result[0].depth}` name="depth")
+                .mb-3
+                    img(src="/images/clock-on-circular.svg", alt="", srcset="").mb-3
+                    .custom-file
+                        input#fileBath.custom-file-input.upladed(type='file' name="file")
+                        label.custom-file-label(for='fileBath') Изображение для ванной
+
+
+                a(href="/adminPanel/bathroom").btn.btn-primary.card-body-news-CRUD__button-back.mr-3.float-left(type='submit') ← назад 
+                button.btn.btn-primary.float-left(type='submit' name="formBtn" data-type='update' data-url="/adminPanel/bathroom/update" data-id=result[0].id) Отправить
+                        
+
+
+
+block footer
+  script(src="/assets/vendor.js")
+  script(src="/assets/admin.js")

@@ -1,4 +1,4 @@
-import $ from "jquery";
+// import $ from "jquery";
 document.querySelectorAll(".swiper-container").forEach(block => {
     block.querySelectorAll(".swiper-slide").forEach(slide=>{
         $(slide).click(function(){
