@@ -8,4 +8,9 @@
     justify-self: center;
     padding: 20px 0;
     margin: 0 auto;
+
+    @include _768{
+        display: block;
+        margin: 0 auto;
+    }
 }
