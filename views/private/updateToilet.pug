@@ -1,0 +1,53 @@
+extends layout
+block head
+  link(rel="stylesheet", href="/assets/styleAdmin.css")
+block content
+
+  .card.text-center
+        include card-header
+        .card-body.mx-auto.w-100
+            form.card-body-CRUD
+                .mb-3
+                    label.form-label Арктикул 
+                    input.form-control(type='text' value= `${result[0].arcticul}`  name="arcticul")
+                .mb-3
+                    label.form-label Название 
+                    input.form-control(type='text' value= `${result[0].name}` name="name")
+                .mb-3
+                    label.form-label Производитель 
+                    input.form-control(type='text' value= `${result[0].manufacturer}` name="manufacturer")
+                .mb-3
+                    label.form-label Ширина (см) 
+                    input.form-control(type='text' value= `${result[0].width}` name="width")
+                .mb-3
+                    label.form-label Глубина (см) 
+                    input.form-control(type='text' value= `${result[0].depth}` name="depth")
+                .mb-3
+                    label.form-label Направление выпуска:
+                    input.form-control(type='text' value= `${result[0].release_direction}`  name="release_direction")
+                .mb-3
+                    label.form-label Сиденье в комплекте
+                    input.form-control(type='text' value= `${result[0].seat_included}` name="seat_included")
+                .mb-3
+                    label.form-label Страна
+                    input.form-control(type='text' value= `${result[0].country}`  name="country")
+                .mb-3
+                    label.form-label Гарантия
+                    input.form-control(type='text' value= `${result[0].guarantee}`  name="guarantee")
+                .mb-3
+                    label.form-label Цена
+                    input.form-control(type='text' value= `${result[0].price}`  name="price")
+                .mb-3
+                    img(src=result[0].imgSours, alt="", srcset="").mb-3
+                    .custom-file
+                        input#fileBath.custom-file-input.upladed(type='file' name="file")
+                        label.custom-file-label(for='fileBath') Изображение для унитаза
+                a(href="/adminPanel/toilet").btn.btn-primary.card-body-news-CRUD__button-back.mr-3.float-left(type='submit') ← назад 
+                button.btn.btn-primary.float-left(type='submit' name="formBtn" data-type='update' data-url="/adminPanel/toilet/update" data-id=result[0].id) Отправить
+                        
+
+
+
+block footer
+  script(src="/assets/vendor.js")
+  script(src="/assets/admin.js")

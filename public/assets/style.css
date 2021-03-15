@@ -788,6 +788,10 @@
 .products__popup-img {
   max-width: 50%;
 }
+.products__popup-img_shower {
+  height: 400px;
+  width: 300px;
+}
 .products__popup-description {
   width: 45%;
   display: flex;

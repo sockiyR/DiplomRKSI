@@ -30,7 +30,7 @@
         }).then(res => {
             if (res.status == 200) {
                 alert("Операция завершина успешно");
-                // document.location.reload();
+                document.location.reload();
             } else {
                 alert("Что-то пошло не так");
                 // document.location.reload();

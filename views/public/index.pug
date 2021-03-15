@@ -108,97 +108,31 @@ block content
 
     .swiper-container.mt-4.mb-4
       .swiper-wrapper
-        .swiper-slide.products__container(data-popup = '<div class="popup"> <div class="popup-content"> <div class="popup-header"> <h2 class="products__name">Название товара</h2> <span class="close">&times;</span> </div> <div class="popup-body"> <img src="./images/photo_1.jpg" alt="" srcset="" class="products__popup-img" /> <div class="products__popup-description"> <h3 class="products__popup-header">Характеристики товара</h3> <ul class="products__popup-list"> <li class="products__popup-list-item">1</li> <li class="products__popup-list-item">2</li> <li class="products__popup-list-item">3</li> <li class="products__popup-list-item">4</li> </ul> <span class="button">УЗНАТЬ БОЛЬШЕ</span>  </div></div>') 
-          img(src="./images/photo_1.jpg", alt="", srcset="").products__img-bath
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+          each val in bathroomData
+            .swiper-slide.products__container(data-popup = `<div class="popup"> <div class="popup-content"> <div class="popup-header"> <h2 class="products__name">${val.name}</h2> <span class="close">&times;</span> </div> <div class="popup-body"> <img src=${val.imgSours} alt="" srcset="" class="products__popup-img" /> <div class="products__popup-description"> <h3 class="products__popup-header">Характеристики товара</h3> <ul class="products__popup-list"> <li class="products__popup-list-item">Артиикул: ${val.arcticul}</li> <li class="products__popup-list-item">Производитель: ${val.manufacturer}</li> <li class="products__popup-list-item">Каркас: ${val.frame}</li> <li class="products__popup-list-item">Слив-перелив: ${val.drain}</li> <li class="products__popup-list-item">Фронтальная панель: ${val.panel}</li> <li class="products__popup-list-item">Длина (см): ${val.length} см</li> <li class="products__popup-list-item">Ширина (см): ${val.width} см</li> <li class="products__popup-list-item">Глубина (см): ${val.depth} см</li> <li class="products__popup-list-item">Цена: ${val.price} Р</li></ul> </div></div>`)  
+                img(src=val.imgSours, alt="", srcset="").products__img-bath
+                span.products__short-description  #{val.name}
 
-        .swiper-slide.products__container 
-          img(src="./images/photo_2.jpg", alt="", srcset="").products__img-bath
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/photo_3.jpeg", alt="", srcset="").products__img-bath
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/photo_5.jpeg", alt="", srcset="").products__img-bath
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/photo_6.jpg", alt="", srcset="").products__img-bath
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/photo_7.jpg", alt="", srcset="").products__img-bath
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/photo_8.jpg", alt="", srcset="").products__img-bath
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-          
       .swiper-button-next
       .swiper-button-prev
 
     span.paragraf__name Душевые кабинки
     .swiper-container.mt-4.mb-4
       .swiper-wrapper
-        .swiper-slide.products__container 
-          img(src="./images/shower_1.jpeg", alt="", srcset="").products__img-shower
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/shower_2.jpg", alt="", srcset="").products__img-shower
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/shower_3.jpg", alt="", srcset="").products__img-shower
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/shower_4.jpg", alt="", srcset="").products__img-shower
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/shower_5.jpeg", alt="", srcset="").products__img-shower
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/shower_6.jpeg", alt="", srcset="").products__img-shower
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/shower_7.jpg", alt="", srcset="").products__img-shower
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-          
+        each val in showerData
+          .swiper-slide.products__container(data-popup = `<div class="popup"> <div class="popup-content"> <div class="popup-header"> <h2 class="products__name">${val.name}</h2> <span class="close">&times;</span> </div> <div class="popup-body"> <img src=${val.imgSours} alt="" srcset="" class="products__popup-img products__popup-img_shower" /> <div class="products__popup-description"> <h3 class="products__popup-header">Характеристики товара</h3> <ul class="products__popup-list"> <li class="products__popup-list-item">Артиикул: ${val.arcticul}</li> <li class="products__popup-list-item">Производитель: ${val.manufacturer}</li> <li class="products__popup-list-item">Гарантия: ${val.guarantee}</li> <li class="products__popup-list-item">Высота (см): ${val.height} см</li> <li class="products__popup-list-item">Длина (см): ${val.length} см</li> <li class="products__popup-list-item">Ширина (см): ${val.width} см</li>  <li class="products__popup-list-item">Цена: ${val.price} Р</li></ul> </div></div>`)  
+            img(src=val.imgSours, alt="", srcset="").products__img-shower
+            span.products__short-description  #{val.name}
       .swiper-button-next
       .swiper-button-prev
     
     span.paragraf__name Раковины
     .swiper-container.mt-4.mb-4
       .swiper-wrapper
-        .swiper-slide.products__container 
-          img(src="./images/sink_1.jpeg", alt="", srcset="").products__img-sink
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/sink_2.jpeg", alt="", srcset="").products__img-sink
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/sink_3.jpeg", alt="", srcset="").products__img-sink
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/sink_4.jpeg", alt="", srcset="").products__img-sink
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/sink_5.jpg", alt="", srcset="").products__img-sink
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/sink_6.jpg", alt="", srcset="").products__img-sink
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+        each val in sinksData
+          .swiper-slide.products__container(data-popup = `<div class="popup"> <div class="popup-content"> <div class="popup-header"> <h2 class="products__name">${val.name}</h2> <span class="close">&times;</span> </div> <div class="popup-body"> <img src=${val.imgSours} alt="" srcset="" class="products__popup-img products__popup-img_shower" /> <div class="products__popup-description"> <h3 class="products__popup-header">Характеристики товара</h3> <ul class="products__popup-list"> <li class="products__popup-list-item">Артиикул: ${val.arcticul}</li> <li class="products__popup-list-item">Производитель: ${val.manufacturer}</li> <li class="products__popup-list-item">Страна производства: ${val.country}</li> <li class="products__popup-list-item">Ширина (см): ${val.width} см</li> <li class="products__popup-list-item">Глубина (см): ${val.depth} см</li> <li class="products__popup-list-item">Гарантия: ${val.guarantee}</li>  <li class="products__popup-list-item">Цена: ${val.price} Р</li></ul> </div></div>`)  
+            img(src=val.imgSours, alt="", srcset="").products__img-sink
+            span.products__short-description  #{val.name}
 
       .swiper-button-next
       .swiper-button-prev
@@ -207,63 +141,20 @@ block content
     span.paragraf__name Смесители
     .swiper-container.mt-4.mb-4
       .swiper-wrapper
-        .swiper-slide.products__container 
-          img(src="./images/mixer_1.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/mixer_2.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/mixer_3.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/mixer_4.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/mixer_5.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/mixer_6.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/mixer_7.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-          
+        each val in mixerData
+          .swiper-slide.products__container(data-popup = `<div class="popup"> <div class="popup-content"> <div class="popup-header"> <h2 class="products__name">${val.name}</h2> <span class="close">&times;</span> </div> <div class="popup-body"> <img src=${val.imgSours} alt="" srcset="" class="products__popup-img products__popup-img_shower" /> <div class="products__popup-description"> <h3 class="products__popup-header">Характеристики товара</h3> <ul class="products__popup-list"> <li class="products__popup-list-item">Артиикул: ${val.arcticul}</li> <li class="products__popup-list-item">Производитель: ${val.manufacturer}</li> <li class="products__popup-list-item">Страна производства: ${val.country}</li> <li class="products__popup-list-item">Управление: ${val.control} </li> <li class="products__popup-list-item">Гарантия: ${val.guarantee}</li>  <li class="products__popup-list-item">Цена: ${val.price} Р</li></ul> </div></div>`) 
+            img(src=val.imgSours, alt="", srcset="").products__img-mixer
+            span.products__short-description  #{val.name}
       .swiper-button-next
       .swiper-button-prev
 
     span.paragraf__name Полотенцесушители
       .swiper-container.mt-4.mb-4
         .swiper-wrapper
-          .swiper-slide.products__container 
-            img(src="./images/heated_towel_rail_1.jpg", alt="", srcset="").products__img-mixer
-            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-          .swiper-slide.products__container 
-            img(src="./images/heated_towel_rail_2.jpg", alt="", srcset="").products__img-mixer
-            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-          .swiper-slide.products__container 
-            img(src="./images/heated_towel_rail_3.jpg", alt="", srcset="").products__img-mixer
-            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-          .swiper-slide.products__container 
-            img(src="./images/heated_towel_rail_4.jpeg", alt="", srcset="").products__img-mixer
-            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-          .swiper-slide.products__container 
-            img(src="./images/heated_towel_rail_5.jpg", alt="", srcset="").products__img-mixer
-            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-          .swiper-slide.products__container 
-            img(src="./images/heated_towel_rail_6.jpg", alt="", srcset="").products__img-mixer
-            span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+          each val in towelData
+            .swiper-slide.products__container(data-popup = `<div class="popup"> <div class="popup-content"> <div class="popup-header"> <h2 class="products__name">${val.name}</h2> <span class="close">&times;</span> </div> <div class="popup-body"> <img src=${val.imgSours} alt="" srcset="" class="products__popup-img products__popup-img_shower" /> <div class="products__popup-description"> <h3 class="products__popup-header">Характеристики товара</h3> <ul class="products__popup-list"> <li class="products__popup-list-item">Артиикул: ${val.arcticul}</li> <li class="products__popup-list-item">Производитель: ${val.manufacturer}</li> <li class="products__popup-list-item">Форма: ${val.form} </li> <li class="products__popup-list-item">Страна: ${val.country}</li> <li class="products__popup-list-item">Гарантия: ${val.guarantee} </li>   <li class="products__popup-list-item">Цена: ${val.price} Р</li></ul> </div></div>`)
+              img(src=val.imgSours, alt="", srcset="").products__img-mixer
+              span.products__short-description  #{val.name}
 
         .swiper-button-next
         .swiper-button-prev 
@@ -271,34 +162,11 @@ block content
     span.paragraf__name Унитазы
     .swiper-container.mt-4.mb-4
       .swiper-wrapper
-        .swiper-slide.products__container 
-          img(src="./images/restroom_1.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
+        each val in toiletData
+          .swiper-slide.products__container(data-popup = `<div class="popup"> <div class="popup-content"> <div class="popup-header"> <h2 class="products__name">${val.name}</h2> <span class="close">&times;</span> </div> <div class="popup-body"> <img src=${val.imgSours} alt="" srcset="" class="products__popup-img products__popup-img_shower" /> <div class="products__popup-description"> <h3 class="products__popup-header">Характеристики товара</h3> <ul class="products__popup-list"> <li class="products__popup-list-item">Артиикул: ${val.arcticul}</li> <li class="products__popup-list-item">Производитель: ${val.manufacturer}</li> <li class="products__popup-list-item">Ширина (см): ${val.width} </li> <li class="products__popup-list-item">Глубина (см): ${val.depth} см</li>  <li class="products__popup-list-item">Направление выпуска: ${val.release_direction} </li> <li class="products__popup-list-item">Сиденье в комплекте: ${val.seat_included} </li> <li class="products__popup-list-item">Страна: ${val.country} </li> <li class="products__popup-list-item">Гарантия: ${val.guarantee} </li>   <li class="products__popup-list-item">Цена: ${val.price} Р</li></ul> </div></div>`)
+            img(src=val.imgSours, alt="", srcset="").products__img-mixer
+            span.products__short-description   #{val.name}
 
-        .swiper-slide.products__container 
-          img(src="./images/restroom_2.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/restroom_3.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/restroom_4.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/restroom_5.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/restroom_6.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-
-        .swiper-slide.products__container 
-          img(src="./images/restroom_7.jpg", alt="", srcset="").products__img-mixer
-          span.products__short-description  Акриловая ванна MarkaOne Modern 170х70
-          
       .swiper-button-next
       .swiper-button-prev
   

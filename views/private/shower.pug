@@ -7,37 +7,33 @@ block content
         include card-header
         .card-body.mx-auto.w-100
             .card-body-news-CRUD
-                a(href="/adminPanel/bathroom/addBathroom").btn.btn-success.float-left.mb-3 Добавить
-                h4 Ванные
+                a(href="/adminPanel/shower/addShower").btn.btn-success.float-left.mb-3 Добавить
+                h4 Душевые кабинки
                 table.table
                     thead
                         tr
                         th(scope='col') Код товара\Наименование
                         th(scope='col') Производитель
-                        th(scope='col') Каркас 
-                        th(scope='col') Слив-перелив
-                        th(scope='col') Фронтальная панель
+                        th(scope='col') Гарантия 
+                        th(scope='col') Высота (см)
                         th(scope='col') Длина (см)
                         th(scope='col') Ширина (см)
-                        th(scope='col') Глубина (см)
                         th(scope='col') Цена
                         th(scope='col') Действия
                     tbody
-                        each val in bathroomData
+                        each val in showerData
                             tr.card-body-news-CRUD__row
                                 th #{val.arcticul} \ #{val.name}
                                 th #{val.manufacturer}
-                                th #{val.frame}
-                                th #{val.drain}
-                                th #{val.panel}
+                                th #{val.guarantee}
+                                th #{val.height}
                                 th #{val.length}
                                 th #{val.width}
-                                th #{val.depth}
                                 th #{val.price}
                                 td
                                     form.button-form 
-                                        button.btn.btn-danger.mr-1.delete-entity-button(type='button' name="deleteEntity" data-url-entity='/adminPanel/bathroom/delite' data-id-entity=val.id ) Удалить
-                                        button.btn.btn-warning(type='button' name="updateEntity" data-url-entity='/adminPanel/bathroom/update' data-id-entity= val.id data-name=val.name) Редактировать
+                                        button.btn.btn-danger.mr-1.delete-entity-button(type='button' name="deleteEntity" data-url-entity='/adminPanel/shower/delite' data-id-entity=val.id ) Удалить
+                                        button.btn.btn-warning(type='button' name="updateEntity" data-url-entity='/adminPanel/shower/update' data-id-entity= val.id data-name=val.name) Редактировать
                         
                         
 

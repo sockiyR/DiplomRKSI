@@ -1,0 +1,52 @@
+extends layout
+block head
+  link(rel="stylesheet", href="/assets/styleAdmin.css")
+block content
+
+  .card.text-center
+        include card-header
+        .card-body.mx-auto.w-100
+            form.card-body-CRUD
+                .mb-3
+                    label.form-label Арктикул 
+                    input.form-control(type='text'  name="arcticul")
+                .mb-3
+                    label.form-label Название 
+                    input.form-control(type='text'  name="name")
+                .mb-3
+                    label.form-label Производитель 
+                    input.form-control(type='text'  name="manufacturer")
+                .mb-3
+                    label.form-label Ширина (см) 
+                    input.form-control(type='text'  name="width")
+                .mb-3
+                    label.form-label Глубина (см) 
+                    input.form-control(type='text' name="depth")
+                .mb-3
+                    label.form-label Направление выпуска:
+                    input.form-control(type='text'  name="release_direction")
+                .mb-3
+                    label.form-label Сиденье в комплекте
+                    input.form-control(type='text'  name="seat_included")
+                .mb-3
+                    label.form-label Страна
+                    input.form-control(type='text'  name="country")
+                .mb-3
+                    label.form-label Гарантия
+                    input.form-control(type='text'  name="guarantee")
+                .mb-3
+                    label.form-label Цена
+                    input.form-control(type='text'  name="price")
+                .mb-3
+                    .custom-file
+                        input#fileBath.custom-file-input.upladed(type='file' name="file")
+                        label.custom-file-label(for='fileBath') Изображение для унитаза
+                a(href="/adminPanel/toilet").btn.btn-primary.card-body-news-CRUD__button-back.mr-3.float-left(type='submit') ← назад 
+                button.btn.btn-primary.float-left(type='submit' name="formBtn" data-type='add' data-url="/adminPanel/toilet/addToilet" ) Отправить
+                        
+
+
+
+block footer
+  script(src="/assets/vendor.js")
+  script(src="/assets/admin.js")

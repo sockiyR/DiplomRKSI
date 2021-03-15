@@ -5,7 +5,7 @@ var router = express.Router();
 const upload  = require("../../module/fileLoader");
 
 router.get('/', async function(req, res, next) {
-    const result = await knex.select(["manufacturer","frame","drain","panel","length","width","depth","arcticul","name","bathroom.id AS id"]).from("bathroom").innerJoin('products',"bathroom.id","=","products.id_bath");
+    const result = await knex.select(["manufacturer","frame","drain","panel","length","width","depth","arcticul","name","price","bathroom.id AS id"]).from("bathroom").innerJoin('products',"bathroom.id","=","products.id_bath");
     res.render('private/bathroom', {bathroomData:result});
 });
 
@@ -23,7 +23,7 @@ router.get('/update:id', async function (req, res, next) {
     try {
         let id = req.params.id;
         const result = await knex
-        .select(["manufacturer","frame","drain","panel","length","width","depth","arcticul","name","imgSours","bathroom.id AS id"])
+        .select(["manufacturer","frame","drain","panel","length","width","depth","arcticul","name","price","imgSours","bathroom.id AS id"])
         .from("bathroom")
         .innerJoin('products',"bathroom.id","=","products.id_bath")
         .where({'bathroom.id': id});
@@ -40,10 +40,10 @@ router.get('/update:id', async function (req, res, next) {
 router.patch('/update:id', upload.single('file'), async function (req, res, next) {
     try{
         const id = req.params.id;
-        const {arcticul, manufacturer,frame,drain,panel,length,width,depth,file} = req.body;
+        const {arcticul, manufacturer,frame,drain,panel,length,width,depth,name,price,file} = req.body;
         let fileSrc;
         if(req.file){
-            fileSrc = 'public/images/' + req.file.filename;
+            fileSrc = '/images/' + req.file.filename;
             await knex('bathroom').where('id', id).update({
                 manufacturer: decodeURI(manufacturer),
                 frame: decodeURI(frame),
@@ -52,9 +52,11 @@ router.patch('/update:id', upload.single('file'), async function (req, res, next
                 length: decodeURI(length),
                 width: decodeURI(width),
                 depth: decodeURI(depth),
+                name: decodeURI(name),
+                price: decodeURI(price),
                 imgSours : fileSrc
             });
-            await knex('products').where('id', id).update({
+            await knex('products').where('id_bath', id).update({
                 arcticul: decodeURI(arcticul),
                 id_bath: id
             })
@@ -75,10 +77,10 @@ router.get('/addBathroom', async function(req, res, next) {
 
 router.post('/addBathroom', upload.single('file'),async function(req, res, next) {
     try{
-        const {arcticul, manufacturer,frame,drain,panel,length,width,depth,name,file} = req.body;
+        const {arcticul, manufacturer,frame,drain,panel,length,width,depth,name,price,file} = req.body;
         let fileSrc;
         if(req.file){
-            fileSrc = 'public/images/' + req.file.filename;
+            fileSrc = '/images/' + req.file.filename;
             await knex('bathroom').insert({
                 manufacturer: decodeURI(manufacturer),
                 frame: decodeURI(frame),
@@ -88,6 +90,7 @@ router.post('/addBathroom', upload.single('file'),async function(req, res, next)
                 width: decodeURI(width),
                 depth: decodeURI(depth),
                 name: decodeURI(name),
+                price: decodeURI(price),
                 imgSours : fileSrc
             });
             const id  = await knex('bathroom').max('id');

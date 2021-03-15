@@ -11,7 +11,13 @@ const isAdmin = require("./module/isAdmin");
 const indexRouter = require('./routes/public/index');
 const loginRouter = require('./routes/private/login');
 const bathroomRouter = require("./routes/private/bathroom");
-const { error } = require('console');
+const showerRouter = require("./routes/private/shower");
+const sinksRouter = require("./routes/private/sinks");
+const mixerRouter = require("./routes/private/mixer");
+const towelRouter = require("./routes/private/towel");
+const toiletRouter = require("./routes/private/toilet");
+
+// const { error } = require('console');
 const app = express();
 
 // view engine setup
@@ -38,8 +44,11 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/adminPanel/login', loginRouter);
 app.use('/adminPanel/bathroom', isAdmin, bathroomRouter);
-
-
+app.use('/adminPanel/shower', isAdmin, showerRouter);
+app.use('/adminPanel/sinks', isAdmin, sinksRouter);
+app.use('/adminPanel/mixer', isAdmin, mixerRouter);
+app.use('/adminPanel/towel', isAdmin, towelRouter);
+app.use('/adminPanel/toilet', isAdmin, toiletRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

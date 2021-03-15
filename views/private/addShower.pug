@@ -1,0 +1,45 @@
+extends layout
+block head
+  link(rel="stylesheet", href="/assets/styleAdmin.css")
+block content
+
+  .card.text-center
+        include card-header
+        .card-body.mx-auto.w-100
+            form.card-body-CRUD
+                .mb-3
+                    label.form-label Арктикул 
+                    input.form-control(type='text'  name="arcticul")
+                .mb-3
+                    label.form-label Название 
+                    input.form-control(type='text'  name="name")
+                .mb-3
+                    label.form-label Производитель 
+                    input.form-control(type='text'  name="manufacturer")
+                .mb-3
+                    label.form-label Гарантия: 
+                    input.form-control(type='text'  name="guarantee")
+                .mb-3
+                    label.form-label Высота (см): 
+                    input.form-control(type='text' name="height")
+                .mb-3
+                    label.form-label Длина (см): 
+                    input.form-control(type='text'  name="length")
+                .mb-3
+                    label.form-label Ширина (см): 
+                    input.form-control(type='text'  name="width")
+                .mb-3
+                    label.form-label Цена 
+                    input.form-control(type='text'  name="price")
+                .custom-file.mb-3
+                    input#fileBath.custom-file-input.upladed(type='file' name="file")
+                    label.custom-file-label(for='fileBath') Изображение для душевой кабинки
+                a(href="/adminPanel/shower").btn.btn-primary.card-body-news-CRUD__button-back.mr-3.float-left(type='submit') ← назад 
+                button.btn.btn-primary.float-left(type='submit' name="formBtn" data-type='add' data-url="/adminPanel/shower/addShower" ) Отправить
+                        
+
+
+
+block footer
+  script(src="/assets/vendor.js")
+  script(src="/assets/admin.js")

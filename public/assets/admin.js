@@ -41,7 +41,8 @@ document.querySelectorAll('.card-body-CRUD').forEach(function (form) {
       body: formData
     }).then(function (res) {
       if (res.status == 200) {
-        alert("Операция завершина успешно"); // document.location.reload();
+        alert("Операция завершина успешно");
+        document.location.reload();
       } else {
         alert("Что-то пошло не так"); // document.location.reload();
       }
@@ -112,7 +113,7 @@ document.querySelectorAll(".button-form").forEach(function (form) {
         if (result.status == 200) {
           document.location.reload();
         } else {
-          alert('Кавальски всё пощло не по плану');
+          alert('Упс! кажется что то сломалось');
         }
       });
     }

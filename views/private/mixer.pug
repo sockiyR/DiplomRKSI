@@ -1,0 +1,42 @@
+extends layout
+block head
+  link(rel="stylesheet", href="/assets/styleAdmin.css")
+block content
+
+  .card.text-center
+        include card-header
+        .card-body.mx-auto.w-100
+            .card-body-news-CRUD
+                a(href="/adminPanel/mixer/addMixer").btn.btn-success.float-left.mb-3 Добавить
+                h4 Смесители
+                table.table
+                    thead
+                        tr
+                        th(scope='col') Код товара\Наименование
+                        th(scope='col') Производитель
+                        th(scope='col') Управление 
+                        th(scope='col') Страна
+                        th(scope='col') Гарантия
+                        th(scope='col') Цена
+                        th(scope='col') Действия
+                    tbody
+                        each val in mixerData
+                            tr.card-body-news-CRUD__row
+                                th #{val.arcticul} \ #{val.name}
+                                th #{val.manufacturer}
+                                th #{val.control}
+                                th #{val.country}
+                                th #{val.guarantee}
+                                th #{val.price}
+                                td
+                                    form.button-form 
+                                        button.btn.btn-danger.mr-1.delete-entity-button(type='button' name="deleteEntity" data-url-entity='/adminPanel/mixer/delite' data-id-entity=val.id ) Удалить
+                                        button.btn.btn-warning(type='button' name="updateEntity" data-url-entity='/adminPanel/mixer/update' data-id-entity= val.id data-name=val.name) Редактировать
+                        
+                        
+
+
+
+block footer
+  script(src="/assets/vendor.js")
+  script(src="/assets/admin.js")

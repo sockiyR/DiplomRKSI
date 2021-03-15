@@ -17,32 +17,26 @@ block content
                     label.form-label Производитель 
                     input.form-control(type='text'  name="manufacturer")
                 .mb-3
-                    label.form-label Каркас 
-                    input.form-control(type='text'  name="frame")
-                .mb-3
-                    label.form-label Слив-перелив 
-                    input.form-control(type='text' name="drain")
-                .mb-3
-                    label.form-label Фронтальная панель 
-                    input.form-control(type='text'  name="panel")
-                .mb-3
-                    label.form-label Длина (см) 
-                    input.form-control(type='text'  name="length")
+                    label.form-label Страна производства: 
+                    input.form-control(type='text'  name="country")
                 .mb-3
                     label.form-label Ширина (см)
-                    input.form-control(type='text'  name="width")
+                    input.form-control(type='text' name="width")
                 .mb-3
                     label.form-label Глубина (см)
                     input.form-control(type='text'  name="depth")
+                .mb-3
+                    label.form-label Гарантия
+                    input.form-control(type='text'  name="guarantee")
                 .mb-3
                     label.form-label Цена
                     input.form-control(type='text'  name="price")
                 .mb-3
                     .custom-file
                         input#fileBath.custom-file-input.upladed(type='file' name="file")
-                        label.custom-file-label(for='fileBath') Изображение для ванной
-                a(href="/adminPanel/bathroom").btn.btn-primary.card-body-news-CRUD__button-back.mr-3.float-left(type='submit') ← назад 
-                button.btn.btn-primary.float-left(type='submit' name="formBtn" data-type='add' data-url="/adminPanel/bathroom/addBathroom" ) Отправить
+                        label.custom-file-label(for='fileBath') Изображение для раковины
+                a(href="/adminPanel/sinks").btn.btn-primary.card-body-news-CRUD__button-back.mr-3.float-left(type='submit') ← назад 
+                button.btn.btn-primary.float-left(type='submit' name="formBtn" data-type='add' data-url="/adminPanel/sinks/addSinks" ) Отправить
                         
 
 

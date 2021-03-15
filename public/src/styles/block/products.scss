@@ -55,6 +55,11 @@
     }
     &__popup-img{
         max-width: 50%;
+
+        &_shower{
+            height: 400px;
+            width: 300px;
+        }
     }
     &__popup-description{
         width: 45%;

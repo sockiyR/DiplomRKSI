@@ -21,7 +21,7 @@ document.querySelectorAll(".button-form").forEach(form => {
                 if (result.status == 200) {
                     document.location.reload();
                 } else {
-                    alert('Кавальски всё пощло не по плану');
+                    alert('Упс! кажется что то сломалось');
                 }
             });
         } 
