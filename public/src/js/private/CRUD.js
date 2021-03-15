@@ -2,10 +2,12 @@
     var formData = new FormData();
     const type = form.formBtn.dataset.type;
     let url, id, method;
+    let status;
+    let code = false;
+
     form.addEventListener('submit', event => {
         event.preventDefault();
         let arg = $(".card-body-CRUD").serialize().split("&");
-        // let arg = [];
         let sendData = {};
         arg.forEach(el => {
             let coupleVar = el.split("=");
@@ -23,18 +25,41 @@
             url = form.formBtn.dataset.url + id;
             method = 'PATCH';
         }
+        
         formData.append("file", document.querySelector(".upladed").files[0], "image.png");
-        fetch(url, {
-            method: method,
-            body: formData,
-        }).then(res => {
-            if (res.status == 200) {
-                alert("Операция завершина успешно");
-                document.location.reload();
+          
+        form.querySelectorAll(`input[data-namber="true"]`).forEach(input=>{
+            if (code) {
+                return;
             } else {
-                alert("Что-то пошло не так");
-                // document.location.reload();
+                if (!/\D/g.test(input.value)) {
+                    status=true;
+                } else {
+                    alert("В это поле можно вводить только цифры");
+                    input.value = input.value.replace(/\D/g, '');
+                    code=true;
+                    return;
+                }
             }
+           
         });
+        
+        if (status) {
+            fetch(url, {
+                method: method,
+                body: formData,
+            }).then(res => {
+                if (res.status == 200) {
+                    alert("Операция завершина успешно");
+                    document.location.reload();
+                } else {
+                    alert("Что-то пошло не так");
+                    document.location.reload();
+                }
+            });
+        } else {
+            alert("Что-то пошло не так");
+            document.location.reload();
+        }
     })
 })

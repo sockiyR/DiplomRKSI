@@ -21,16 +21,16 @@ block content
                     input.form-control(type='text'  value= `${result[0].guarantee}` name="guarantee")
                 .mb-3
                     label.form-label Высота (см): 
-                    input.form-control(type='text' value= `${result[0].height}` name="height")
+                    input.form-control(type='text' value= `${result[0].height}` data-namber="true" name="height")
                 .mb-3
                     label.form-label Длина (см): 
-                    input.form-control(type='text' value= `${result[0].length}` name="length")
+                    input.form-control(type='text' value= `${result[0].length}` data-namber="true" name="length")
                 .mb-3
                     label.form-label Ширина (см): 
-                    input.form-control(type='text' value=`${result[0].width}` name="width")
+                    input.form-control(type='text' value=`${result[0].width}` data-namber="true" name="width")
                 .mb-3
                     label.form-label Цена
-                    input.form-control(type='text' value=`${result[0].price}` name="price")
+                    input.form-control(type='text' value=`${result[0].price}` data-namber="true" name="price")
 
                 .mb-3
                     img(src=result[0].imgSours, alt="", srcset="").mb-3

@@ -13,10 +13,11 @@ document.querySelectorAll('.card-body-CRUD').forEach(function (form) {
   var formData = new FormData();
   var type = form.formBtn.dataset.type;
   var url, id, method;
+  var status;
+  var code = false;
   form.addEventListener('submit', function (event) {
     event.preventDefault();
-    var arg = $(".card-body-CRUD").serialize().split("&"); // let arg = [];
-
+    var arg = $(".card-body-CRUD").serialize().split("&");
     var sendData = {};
     arg.forEach(function (el) {
       var coupleVar = el.split("=");
@@ -36,17 +37,38 @@ document.querySelectorAll('.card-body-CRUD').forEach(function (form) {
     }
 
     formData.append("file", document.querySelector(".upladed").files[0], "image.png");
-    fetch(url, {
-      method: method,
-      body: formData
-    }).then(function (res) {
-      if (res.status == 200) {
-        alert("Операция завершина успешно");
-        document.location.reload();
+    form.querySelectorAll("input[data-namber=\"true\"]").forEach(function (input) {
+      if (code) {
+        return;
       } else {
-        alert("Что-то пошло не так"); // document.location.reload();
+        if (!/\D/g.test(input.value)) {
+          status = true;
+        } else {
+          alert("В это поле можно вводить только цифры");
+          input.value = input.value.replace(/\D/g, '');
+          code = true;
+          return;
+        }
       }
     });
+
+    if (status) {
+      fetch(url, {
+        method: method,
+        body: formData
+      }).then(function (res) {
+        if (res.status == 200) {
+          alert("Операция завершина успешно");
+          document.location.reload();
+        } else {
+          alert("Что-то пошло не так");
+          document.location.reload();
+        }
+      });
+    } else {
+      alert("Что-то пошло не так");
+      document.location.reload();
+    }
   });
 });
 
