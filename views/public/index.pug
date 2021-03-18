@@ -11,13 +11,11 @@ block content
       img(src="./images/logo.svg", alt="", srcset="").header__logo
       ul.header__list 
         li.header__list-item.mr-4
-          a(href="#categories") Категории
-        li.header__list-item.mr-4
           a(href="#about") О компании
         li.header__list-item.mr-4
-          a(href="#") контакты
+          a(href="#contacts") контакты
         li.header__list-item
-          a(href="#")  Мы на карте
+          a(href="#map")  Мы на карте
 
       .hamburger
         .hamburger__line-container
@@ -29,13 +27,11 @@ block content
     .wrap.header__content-mobil 
       ul.header__list.header__list_mobile 
         li.header__list-item.header__list-item_mobile
-          a(href="#categories") Категории
-        li.header__list-item.header__list-item_mobile
           a(href="#about") О компании
         li.header__list-item.header__list-item_mobile
-          a(href="#") контакты
+          a(href="#contacts") контакты
         li.header__list-item.header__list-item_mobile
-          a(href="#")  Мы на карте
+          a(href="#map")  Мы на карте
 
 
   section.order 
@@ -118,7 +114,7 @@ block content
       .swiper-button-next
       .swiper-button-prev
 
-    span.paragraf__name Душевые кабинки
+    span.paragraf__name Душевые кабины
     .swiper-container.mt-4.mb-4
       .swiper-wrapper
         each val in showerData
@@ -175,6 +171,8 @@ block content
   section#PopupContainer
 
   section.footer.mt-100
+    a(name="contacts") 
+    a(name="map") 
     .footer__container.wrap.pt-8.pb-8
       #map
       .contacts
