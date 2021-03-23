@@ -60,6 +60,45 @@ function init() {
 
 /***/ }),
 
+/***/ "./js/public/popup-about.js":
+/*!**********************************!*\
+  !*** ./js/public/popup-about.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "../../node_modules/jquery/dist/jquery.js");
+$('.popup-open__about').click(function () {
+  $('.popup-fade__about').fadeIn();
+  return false;
+});
+$('.popup-close').click(function () {
+  $(this).parents('.popup-fade__about').fadeOut();
+  return false;
+});
+$(document).keydown(function (e) {
+  if (e.keyCode === 27) {
+    e.stopPropagation();
+    $('.popup-fade__about').fadeOut();
+  }
+}); // 
+
+$('.popup-open__about-compani').click(function () {
+  $('.popup-fade__about-compani').fadeIn();
+  return false;
+});
+$('.popup-close').click(function () {
+  $(this).parents('.popup-fade__about-compani').fadeOut();
+  return false;
+});
+$(document).keydown(function (e) {
+  if (e.keyCode === 27) {
+    e.stopPropagation();
+    $('.popup-fade__about-compani').fadeOut();
+  }
+});
+
+/***/ }),
+
 /***/ "./js/public/product-popup.js":
 /*!************************************!*\
   !*** ./js/public/product-popup.js ***!
@@ -100,7 +139,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _product_popup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product-popup */ "./js/public/product-popup.js");
 /* harmony import */ var _product_popup__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_product_popup__WEBPACK_IMPORTED_MODULE_3__);
-// import "./swiper-bath";
+/* harmony import */ var _popup_about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./popup-about */ "./js/public/popup-about.js");
+/* harmony import */ var _popup_about__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_popup_about__WEBPACK_IMPORTED_MODULE_4__);
+
 
 
 

@@ -42,7 +42,17 @@ block content
       .order__content.mt-2
         p.order__content-prev КОМАНДА, КОТОРОЙ ВЫ МОЖЕТЕ ДОВЕРЯТЬ
         p.order__content-description.mt-2 Вся наша команда сантехников сертифицирована и имеет многолетний опыт работы как в жилых, так и в коммерческих сантехнических работах.
-      button.button.mt-5 УЗНАТЬ БОЛЬШЕ
+      button.button.popup-open__about.mt-5 УЗНАТЬ БОЛЬШЕ
+        .popup-fade.popup-fade__about
+          .popup-about
+            .popup-about__header
+              p Plubmbit - это то,  чем мы занимаемся
+              a.popup-close(href='#') ❌
+            .popup-about__body 
+              img(src="./images/santeh_about_1.jpg", alt="", srcset="").popup-about__body-img
+              p.popup-about__body-text В нашей компании работают высококвалифицированные специалисты, к которым вы можете обратиться за помощью в подборе и установки сантехники на высшем уровне, ведь у каждого из наших работников имеются не только дипломы и сертификаты, но и не менее 10 лет работы за плечами.Выполнение работ любой сложности-это мы.
+            
+
     .hero.wrap
       ul.hero__list
         li.hero__list-item 
@@ -72,32 +82,15 @@ block content
       p.about__name.mb-4 Plubmbit - это то, чем&nbsp;мы&nbsp;занимаемся
       p.about__content.mb-3 Мы являемся отмеченной наградами сантехнической компанией с более чем 20-летним опытом работы в этом бизнесе. Мы предоставляем широкий спектр услуг как для жилых, так и для коммерческих клиентов.
       p.about__content.mb-6 Ни одна работа не будет слишком большой или слишком маленькой, мы вас прикроем. В дополнение к нашим услугам, вы можете посетить наш магазин для широкого спектра сантехнических принадлежностей и оборудования. Когда дело доходит до сантехники, мы - ваш универсальный магазин.
-      button.button УЗНАТЬ БОЛЬШЕ
-  //- section.categories.pt-100.mt-100 
-    a(name="categories") 
-    .wrap
-      .categories__header.mb-2
-        span.long-line.long-line_other.mr-2  ——
-        span.paragraf__title КАТЕГОРИИ 
-      span.paragraf__name Ремонт
-      ul.categories__list.mt-5.pb-11
-        li.categories__list-item
-          a(href="#") 
-            img(src="./images/category_bath.png", alt="", srcset="")
-            .categories__name-bar 
-              p.categories__name Ванная комната
-        
-        li.categories__list-item
-          a(href="#") 
-            img(src="./images/category_kichen.png", alt="", srcset="")
-            .categories__name-bar 
-              p.categories__name Кухни
-        
-        li.categories__list-item
-          a(href="#") 
-            img(src="./images/category_sanuzel.png", alt="", srcset="")
-            .categories__name-bar 
-              p.categories__name Санузел
+      button.button.popup-open.popup-open__about-compani УЗНАТЬ БОЛЬШЕ
+        .popup-fade.popup-fade__about-compani
+          .popup-about
+            .popup-about__header
+              p Plubmbit111 - это то,  чем мы занимаемся
+              a.popup-close(href='#') ❌
+            .popup-about__body 
+              img(src="./images/worker.png", alt="", srcset="").popup-about__body-img
+              p.popup-about__body-text Более 20 лет на рынке,более 1 000 000 довольных клиентов,более 40 высококвалифицированных специалистов-это мы. Если вы не любите онлайн заказы-приезжайте,наши специалисты помогут вам подобрать идельный вариант именно для вас,ведь на каждого клиента уделяется то количество времени,которое он требует . Работы любой сложности от замены смесителя до сборки и установки кабин,вы можете доверить нам сантехнику и насладиться качеством выполненных работ.
   section.products.wrap
     .products__header.mt-100.mb-2
       span.long-line.long-line_other.mr-2  ——
