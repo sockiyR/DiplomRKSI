@@ -1,13 +1,9 @@
 const path = require('path');
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const LiveReloadPlugin = require('webpack-livereload-plugin');
-// const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
-    mode: NODE_ENV, //мод в котором всё собирается
-    //точка входа (файл с которого всё собирается)
+    mode: NODE_ENV,
     context:path.resolve(__dirname, 'public/src'),
     entry: {
         app: './js/public/script.js',
@@ -15,16 +11,16 @@ module.exports = {
         style: './styles/style.scss',
         styleAdmin: './styles/admin.scss',
     }, 
-    output: { //куда сохронять и под каким именем
+    output: { 
         path: path.resolve(__dirname, 'public/assets'),
         filename: '[name].js',
         publicPath: './',
-        library: '[name]' //<- через это можно будет обратиться ко всему
+        library: '[name]' 
     },
     
-    watch: NODE_ENV == 'development', //пересобирать после обновления файлов
+    watch: NODE_ENV == 'development',
     watchOptions: {
-        aggregateTimeout: 100 //сколько времени ожидает после сохроненения
+        aggregateTimeout: 100 
     },
 
     devtool: 'source-map',
