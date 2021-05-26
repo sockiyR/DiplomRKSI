@@ -1,5 +1,5 @@
 .order {
-    background: url("/images/prevy.jpg") no-repeat;
+    background: url("/images/bathroom-wallpaper-1366x768.jpg") no-repeat;
     background-position: top center;
     background-size: cover;
     width: 100%;
@@ -7,6 +7,8 @@
     color: #FFFFFF;
 
     &__wrap {
+        text-shadow: 0 0 10px rgb(0, 0, 0);
+
         @include _768 {
             margin-left: 37px;
         }
@@ -14,6 +16,7 @@
 
     &__header {
         padding-top: 100px;
+        text-shadow: 0 0 10px rgb(0, 0, 0);
 
         @include _768 {
             padding-top: 58px;
@@ -26,13 +29,16 @@
         line-height: 17px;
         letter-spacing: 0.02em;
         font-family: "Montserrat-Bold";
+        text-shadow: 0 0 10px rgb(0, 0, 0);
+
     }
 
     &__content {
         max-width: 586px;
-         @include _768{
-             max-width: 470px;
-         }
+
+        @include _768 {
+            max-width: 470px;
+        }
     }
 
     &__content-prev {
@@ -53,6 +59,8 @@
         font-size: 16px;
         line-height: 20px;
         letter-spacing: 0.02em;
+        text-shadow: 0 0 10px rgb(0, 0, 0);
+
 
         @include _768 {
             font-size: 14px;
